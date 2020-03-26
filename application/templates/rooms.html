@@ -3,5 +3,28 @@
 {% block content %}
 
 <h1>List of Rooms</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Room Name</th>
+            <th>Floor Material</th>
+            <th>Length</th>
+            <th>Width</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for room in room_list %}
+        <tr>
+            <td>{{ room["room_name"] }}</td>
+            <td>{{ room["room_floor"] }}</td>
+            <td>{{ room["length"] }}</td>
+            <td>{{ room["width"] }}</td>
+            <td>
+                <button>Edit</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
