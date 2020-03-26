@@ -1,6 +1,9 @@
 from application import app
 from flask import render_template
 
+room = {"room_name":"Entry", "room_floor":"stone1","length":5,"width":5}
+
 @app.route('/rooms')
 def rooms():
-    return "<h1>Rooms</h1>"
+    print (room)
+    return render_template("rooms.html")
