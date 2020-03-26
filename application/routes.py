@@ -1,4 +1,4 @@
-from application import app
+from application import app, routes_dungeon
 from flask import render_template
 
 @app.route("/")
