@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Edit Room</h1>
+<dl>
+    <dt>Name</dt>
+    <dd>{{ single_room["room_name"] }}</dd>
+    <dt>Floor Title</dt>
+    <dd>{{ single_room["room_floor"] }}</dd>
+    <dt>Length</dt>
+    <dd>{{ single_room["length"] }}</dd>
+    <dt>Width</dt>
+    <dd>{{ single_room["width"] }}</dd>
+</dl>
+
+{% endblock %}

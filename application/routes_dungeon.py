@@ -6,6 +6,8 @@ room_list = [
         {"room_name":"Throne", "room_floor":"Royal","length":6,"width":9}
 ]
 
+single_room = {"room_name":"Throne", "room_floor":"Royal","length":6,"width":9}
+
 @app.route('/rooms')
 def rooms():
     return render_template("rooms.html", rooms="active", room_list=room_list)
@@ -13,3 +15,7 @@ def rooms():
 @app.route('/levels')
 def levels():
     return render_template("levels.html", levels="active")
+
+@app.route('/edit_room')
+def edit_room():
+    return render_template("edit_room.html", single_room = single_room)
