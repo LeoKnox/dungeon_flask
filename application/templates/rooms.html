@@ -10,6 +10,7 @@
             <th>Floor Material</th>
             <th>Length</th>
             <th>Width</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,9 +20,11 @@
             <td>{{ room["room_floor"] }}</td>
             <td>{{ room["length"] }}</td>
             <td>{{ room["width"] }}</td>
-            <td>
-                <button>Edit</button>
+            <button>
+            <td class="edit_button">
+                Edit
             </td>
+            </button>
         </tr>
         {% endfor %}
     </tbody>

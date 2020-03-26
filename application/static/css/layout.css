@@ -30,3 +30,28 @@ li a:hover:not(.active) {
 .active {
     background-color: gold;
 }
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th {
+    background-color: darkblue;
+    color: white;
+}
+
+td {
+    color: darkblue;
+    height: 30px;
+    vertical-align: bottom;
+    padding-left: 8px;
+}
+
+.edit_button {
+    background-color: darkgray;
+}
