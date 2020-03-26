@@ -1,6 +1,6 @@
 <h1>Navbar</h1>
 <ul>
-    <li class="{{ title }}">Title</li>
-    <li class="{{ rooms }}">Rooms</li>
-    <li class="{{ levels }}">Levels</li>
+    <li class="{{ title }}"><a href="{{ url_for('index')}}">Title</a></li>
+    <li class="{{ rooms }}"><a href="{{ url_for('rooms')}}">Rooms</a></li>
+    <li class="{{ levels }}"><a href="{{ url_for('levels')}}">Levels</a></li>
 </ul>

@@ -2,3 +2,31 @@ body {
     color: darkblue;
     background-color: lightgray;
 }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslategray;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: darkgoldenrod;
+}
+
+.active {
+    background-color: gold;
+}
