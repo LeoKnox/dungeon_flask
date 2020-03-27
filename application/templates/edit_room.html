@@ -13,5 +13,13 @@
     <dt>Width</dt>
     <dd>{{ single_room["width"] }}</dd>
 </dl>
-
+<table>
+    {% for i in range(0, single_room["length"]) %}
+    <tr>
+        {% for j in range(0, single_room["width"]) %}
+        <td>.</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
