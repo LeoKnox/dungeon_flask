@@ -13,13 +13,13 @@
     <dt>Width</dt>
     <dd>{{ single_room["width"] }}</dd>
 </dl>
-<table>
+    <div class="room">
     {% for i in range(0, single_room["length"]) %}
-    <tr>
+    <p>
         {% for j in range(0, single_room["width"]) %}
-        <td>.</td>
+        <div class="room_tile">.</div>
         {% endfor %}
-    </tr>
+    </p>
     {% endfor %}
-</table>
+    </div>
 {% endblock %}
