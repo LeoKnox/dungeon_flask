@@ -1,5 +1,5 @@
 from application import app, db
-from flask import render_template
+from flask import render_template, redirect
 
 #room_list = [
 #        {"room_name":"Entry", "room_floor":"stone1","length":5,"width":5},
@@ -30,3 +30,7 @@ def levels():
 @app.route('/edit_room')
 def edit_room():
     return render_template("edit_room.html", single_room = single_room)
+
+@app.route('/create_room')
+def create_room():
+    return redirect('index')
