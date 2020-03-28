@@ -31,6 +31,6 @@ def levels():
 def edit_room():
     return render_template("edit_room.html", single_room = single_room)
 
-@app.route('/create_room')
+@app.route('/create_room', methods=["GET", "POST"])
 def create_room():
     return redirect('index')
