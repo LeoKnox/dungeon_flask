@@ -70,5 +70,5 @@ td {
 }
 
 .room {
-    padding: 5px;
+    border-collapse: collapse;
 }
