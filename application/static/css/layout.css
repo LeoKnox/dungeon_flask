@@ -73,6 +73,11 @@ td {
     border-collapse: collapse;
 }
 
+.floor_table {
+    border-collapse: collapse;
+    border: 0px;
+}
+
 dl {
     border: 3px solid darkblue;
     padding: 0.5em;
