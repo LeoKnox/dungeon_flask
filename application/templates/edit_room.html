@@ -16,7 +16,7 @@
     {% for i in range(0, single_room["length"]) %}
     <p>
         {% for j in range(0, single_room["width"]) %}
-        <div class="room_tile">.</div>
+        <div class="room_tile"><img src="{{url_for('static', filename='images/floor.jpg') }}" /></div>
         {% endfor %}
     </p>
     {% endfor %}
