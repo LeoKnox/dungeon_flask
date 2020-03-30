@@ -88,7 +88,7 @@ dt {
 }
 
 dt::after {
-    content: ": ";
+    content: ":\00a0";
 }
 
 dd {
