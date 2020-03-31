@@ -1,6 +1,6 @@
 from application import app, db
 from application.forms import CreateRoomForm
-from flask import render_template, redirect
+from flask import render_template, redirect, url_for
 
 #room_list = [
 #        {"room_name":"Entry", "room_floor":"stone1","length":5,"width":5},
@@ -35,4 +35,12 @@ def edit_room():
 
 @app.route('/create_room', methods=["GET", "POST"])
 def create_room():
-    return redirect('index')
+    if form.validate_on_submit():
+        room_name   =   form.room_name.data
+        room_floor  =   form.room_floor.data
+        length      =   form.length.data
+        width       =   form.width.data
+
+        room = Room(room_name=room_name, room_floor=room_floor, length=length, width=width)
+        room.save()
+    return redirect(url_for('rooms'))
