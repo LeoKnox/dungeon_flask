@@ -15,7 +15,7 @@ class Room(db.Document):
     length      =   db.IntField()
     width       =   db.IntField()
 
-@app.route('/rooms')
+@app.route('/rooms', methods=["GET", "POST"])
 def rooms():
     #Room(room_name="Entry", room_floor="stone1",length=5,width=5).save()
     #Room(room_name="Throne", room_floor="Royal",length=6,width=9).save()
@@ -44,3 +44,4 @@ def create_room():
         room = Room(room_name=room_name, room_floor=room_floor, length=length, width=width)
         room.save()
     return redirect(url_for('rooms'))
+    
