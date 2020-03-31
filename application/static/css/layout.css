@@ -60,28 +60,19 @@ td {
     background-color: darkgray;
 }
 
-.room_tile {
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    background-color: brown;
+.floor_table {
+    border: 0px;
     padding: 0px;
     margin: 0px;
-}
-
-.room {
-    border-collapse: collapse;
-}
-
-.floor_table {
-    border-collapse: collapse;
-    border: 0px;
+    max-width: 47px;
+    max-height: 47px;
+    display: inline;
 }
 
 dl {
     border: 3px solid darkblue;
     padding: 0.5em;
-    width: 40%;
+    width: 30%;
 }
 
 dt {
