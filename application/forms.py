@@ -6,5 +6,5 @@ class CreateRoomForm(FlaskForm):
     room_name   =   StringField("Room Name", validators=[DataRequired()])
     room_floor  =   StringField("Room Floor", validators=[DataRequired()])
     length      =   IntegerField("Length", validators=[DataRequired()])
-    Width       =   StringField("Width", validators=[DataRequired()])
+    width       =   StringField("Width", validators=[DataRequired()])
     submit      =   SubmitField("Create Room")

@@ -29,11 +29,25 @@
         {% endfor %}
         <tr>
             <form name="create_room" action="" method="post" nonvalidate>
-                <td>new Name</td>
-                <td>new floor</td>
-                <td>new length</td>
-                <td>new with</td>
-                <td>submit</td>
+                <td>
+                    {{ form.room_name.label }}
+                    {{ form.room_name() }}
+                </td>
+                <td>
+                    {{ form.room_floor.label }}
+                    {{ form.room_floor() }}
+                </td>
+                <td>
+                    {{ form.length.label }}
+                    {{ form.length() }}
+                </td>
+                <td>
+                    {{ form.width.label }}
+                    {{ form.width() }}
+                </td>
+                <td>
+                    {{ form.submit() }}
+                </td>
             </form>
         </tr>
     </tbody>

@@ -1,4 +1,5 @@
 from application import app, db
+from application.forms import CreateRoomForm
 from flask import render_template, redirect
 
 #room_list = [
@@ -18,10 +19,11 @@ class Room(db.Document):
 def rooms():
     #Room(room_name="Entry", room_floor="stone1",length=5,width=5).save()
     #Room(room_name="Throne", room_floor="Royal",length=6,width=9).save()
+    form = CreateRoomForm()
 
     room_list = Room.objects.all()
 
-    return render_template("rooms.html", rooms="active", room_list=room_list)
+    return render_template("rooms.html", rooms="active", room_list=room_list, form=form)
 
 @app.route('/levels')
 def levels():
