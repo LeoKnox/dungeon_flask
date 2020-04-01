@@ -73,6 +73,12 @@ td {
     padding: 0px;
 }
 
+.room {
+    border: 4px #573712 solid;
+    display: inline-block;
+    background-color: darkslategray;
+}
+
 dl {
     border: 3px solid darkblue;
     padding: 0.5em;
