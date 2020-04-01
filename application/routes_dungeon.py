@@ -17,9 +17,18 @@ class Room(db.Document):
 
 @app.route('/rooms', methods=["GET", "POST"])
 def rooms():
+    form = CreateRoomForm()
+
+    if form.validate_on_submit():
+        room_name   =   form.room_name.data
+        room_floor  =   form.room_floor.data
+        length      =   form.length.data
+        width       =   form.width.data
+
+        room = Room(room_name=room_name, room_floor=room_floor, length=length, width=width)
+        room.save()
     #Room(room_name="Entry", room_floor="stone1",length=5,width=5).save()
     #Room(room_name="Throne", room_floor="Royal",length=6,width=9).save()
-    form = CreateRoomForm()
 
     room_list = Room.objects.all()
 
