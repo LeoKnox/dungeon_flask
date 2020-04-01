@@ -2,11 +2,6 @@ from application import app, db
 from application.forms import CreateRoomForm
 from flask import render_template, redirect, url_for
 
-#room_list = [
-#        {"room_name":"Entry", "room_floor":"stone1","length":5,"width":5},
-#        {"room_name":"Throne", "room_floor":"Royal","length":6,"width":9}
-#]
-
 single_room = {"room_name":"Throne", "room_floor":"Royal","length":6,"width":9}
 
 class Room(db.Document):
@@ -27,8 +22,6 @@ def rooms():
 
         room = Room(room_name=room_name, room_floor=room_floor, length=length, width=width)
         room.save()
-    #Room(room_name="Entry", room_floor="stone1",length=5,width=5).save()
-    #Room(room_name="Throne", room_floor="Royal",length=6,width=9).save()
 
     room_list = Room.objects.all()
 

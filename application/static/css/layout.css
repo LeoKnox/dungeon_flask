@@ -74,7 +74,7 @@ td {
 }
 
 .room {
-    border: 4px #573712 solid;
+    border: 8px #573712 solid;
     display: inline-block;
     background-color: darkslategray;
 }
