@@ -12,13 +12,13 @@
     <dt>Width</dt>
     <dd>{{ single_room["width"] }}</dd>
 </dl>
-<table>
+<div>
 {% for i in range(0, single_room["length"]) %}
-<tr>
+    <div class="row"
     {% for j in range(0, single_room["width"]) %}
-    <td class="floor_table"><img src="{{url_for('static', filename='images/floor.jpg') }}" /></td>
+    <img class="floor_table" src="{{url_for('static', filename='images/floor.jpg') }}" />
     {% endfor %}
-</tr>
+    </div>
 {% endfor %}
-</table>
+</div>
 {% endblock %}

@@ -69,6 +69,10 @@ td {
     display: inline;
 }
 
+.row {
+    padding: 0px;
+}
+
 dl {
     border: 3px solid darkblue;
     padding: 0.5em;
