@@ -31,9 +31,10 @@ def rooms():
 def levels():
     return render_template("levels.html", levels="active")
 
-@app.route('/edit_room', methods=['GET', 'POST'])
-def edit_room():
-    #single_room = Room.objects.(room_name=room_name).first()
+@app.route('/edit_room/<room_name>', methods=['GET', 'POST'])
+def edit_room(room_name):
+    print(room_name)
+    #single_room = Room.objects(room_name=room_name).first()
     return render_template("edit_room.html", single_room = single_room)
 
 @app.route('/create_room', methods=["GET", "POST"])
