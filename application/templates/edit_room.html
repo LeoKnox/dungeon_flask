@@ -21,4 +21,23 @@
     </div>
 {% endfor %}
 </div>
+<form name="edit_room" action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.room_name.label }}
+        {{ form.room_name(value=single_room['room_name']) }}
+    </p>
+    <p>
+        {{ form.room_floor.label }}
+        {{ form.room_name(value=single_room['room_floor']) }}
+    </p>
+    <p>
+        {{ form.length.label }}
+        {{ form.room_name(value=single_room['length']) }}
+    </p>
+    <p>
+        {{ form.width.label }}
+        {{ form.room_name(value=single_room['width']) }}
+    </p>
+</form>
 {% endblock %}
