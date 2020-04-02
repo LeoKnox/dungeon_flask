@@ -21,7 +21,7 @@
             <td>{{ room["length"] }}</td>
             <td>{{ room["width"] }}</td>
             <td class="edit_button">
-            <a href="{{ url_for('edit_room') }}">
+            <a href="{{ url_for('edit_room', name=room['room_name']) }}">
                 Edit
             </a>
             </td>
