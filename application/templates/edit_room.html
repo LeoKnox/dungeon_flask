@@ -26,18 +26,33 @@
     <p>
         {{ form.room_name.label }}
         {{ form.room_name(value=single_room['room_name']) }}
+        {% for error in form.room_name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
     </p>
     <p>
         {{ form.room_floor.label }}
-        {{ form.room_name(value=single_room['room_floor']) }}
+        {{ form.room_floor(value=single_room['room_floor']) }}
+        {% for error in form.room_floor.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
     </p>
     <p>
         {{ form.length.label }}
-        {{ form.room_name(value=single_room['length']) }}
+        {{ form.length(value=single_room['length']) }}
+        {% for error in form.length.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
     </p>
     <p>
         {{ form.width.label }}
-        {{ form.room_name(value=single_room['width']) }}
+        {{ form.width(value=single_room['width']) }}
+        {% for error in form.width.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.submit() }}
     </p>
 </form>
 {% endblock %}

@@ -35,6 +35,15 @@ def levels():
 def edit_room(room_name):
     form = CreateRoomForm()
     single_room = Room.objects(room_name=room_name).first()
+    if form.validate_on_submit():
+        room = {
+            "room_name":form.room_name.data,
+            "room_floor":form.room_floor.data,
+            "length":form.length.data,
+            "width":form.width.data
+        }
+        single_room.update(**room)
+        return redirect(url_for('rooms'))
     return render_template("edit_room.html", single_room = single_room, form=form)
 
 @app.route('/create_room', methods=["GET", "POST"])
