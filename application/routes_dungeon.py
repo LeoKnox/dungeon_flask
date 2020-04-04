@@ -43,7 +43,7 @@ def edit_room(room_name):
         }
     ]))
 
-    print(doors[0]['r1'][0]['door_type'])
+    #print(doors[0]['r1'][0]['door_type'])
     if form.validate_on_submit():
         room = {
             "room_name":form.room_name.data,
@@ -53,7 +53,7 @@ def edit_room(room_name):
         }
         single_room.update(**room)
         return redirect(url_for('rooms'))
-    return render_template("edit_room.html", single_room = single_room, form=form)
+    return render_template("edit_room.html", single_room = doors[0], form=form)
 
 @app.route('/create_room', methods=["GET", "POST"])
 def create_room():
