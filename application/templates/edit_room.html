@@ -11,6 +11,10 @@
     <dt>Width</dt>
     <dd>{{ single_room["width"] }}</dd>
 </dl>
+<h3>Doors:</h3>
+{% for door in single_room["r1"] %}
+    <p>{{ door["room_name"] }} - {{ door["room_wall"] }} - {{ door["wall_pos"] }} - {{ door["door_type"] }}</p>
+{% endfor %}
 
 <div class="room">
 {% for i in range(0, single_room["length"]) -%}
