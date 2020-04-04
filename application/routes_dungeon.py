@@ -3,8 +3,6 @@ from application.forms import CreateRoomForm
 from application.models import Room, Door
 from flask import render_template, redirect, url_for
 
-single_room = {"room_name":"Throne", "room_floor":"Royal","length":6,"width":9}
-
 @app.route('/rooms', methods=["GET", "POST"])
 def rooms():
     form = CreateRoomForm()
@@ -30,21 +28,8 @@ def levels():
 def edit_room(room_name):
     form = CreateRoomForm()
     single_room = Room.objects(room_name=room_name).first()
-    doors = list( Door.objects.aggregate(*[
-        {
-            '$lookup': {
-                'from': 'doors', 
-                'localField': 'room_name', 
-                'foreignField': 'room_name', 
-                'as': 'r1'
-            }
-        }, {
-            '$match': {
-                'room_name': 'Entry'
-            }
-        }
-    ]))
-    print (doors)
+    doors = Door.objects().first()
+    print(doors)
     if form.validate_on_submit():
         room = {
             "room_name":form.room_name.data,
