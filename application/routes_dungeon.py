@@ -43,7 +43,7 @@ def edit_room(room_name):
         }
     ]))
 
-    print(doors[0])
+    print(doors[0]['r1'][0]['door_type'])
     if form.validate_on_submit():
         room = {
             "room_name":form.room_name.data,
