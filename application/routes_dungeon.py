@@ -38,7 +38,7 @@ def edit_room(room_name):
             }
         }, {
             '$match': {
-                'room_name': 'Entry'
+                'room_name': room_name
             }
         }
     ]))
