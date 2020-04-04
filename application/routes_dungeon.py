@@ -28,8 +28,22 @@ def levels():
 def edit_room(room_name):
     form = CreateRoomForm()
     single_room = Room.objects(room_name=room_name).first()
-    doors = Door.objects().first()
-    print(doors)
+    doors = list( Room.objects.aggregate(*[
+        {
+            '$lookup': {
+                'from': 'Door', 
+                'localField': 'room_name', 
+                'foreignField': 'room_name', 
+                'as': 'r1'
+            }
+        }, {
+            '$match': {
+                'room_name': 'Entry'
+            }
+        }
+    ]))
+
+    print(doors[0])
     if form.validate_on_submit():
         room = {
             "room_name":form.room_name.data,
