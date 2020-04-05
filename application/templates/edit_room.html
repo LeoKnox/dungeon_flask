@@ -23,22 +23,27 @@
 </ul>
 
 <div class="room">
-<img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+    <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
 -->{% for j in range(0, single_room["width"]) -%}<!--
---><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
 -->{% endfor %}<!--
---><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
--->{% for i in range(0, single_room["length"]) %}<!--
---><div class="row">
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" />
+{% for i in range(0, single_room["length"]) %}
+    <div class="row">
     <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
     -->{% for j in range(0, single_room["width"]) -%}<!--
     --><img class="floor_table" src="{{url_for('static', filename='images/floor.jpg') }}" /><!--
     -->{% endfor %}<!--
-    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" />
-    </div>
-{% endfor %}
-</div>
-<form name="edit_room" action="" method="post" novalidate>
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+    --></div><!--
+-->{% endfor %}<!--
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+-->{% for j in range(0, single_room["width"]) -%}<!--
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+-->{% endfor %}<!--
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+--></div><!--
+--><form name="edit_room" action="" method="post" novalidate>
     {{ form.hidden_tag() }}
     <p>
         {{ form.room_name.label }}
