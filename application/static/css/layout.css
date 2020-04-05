@@ -79,6 +79,19 @@ td {
     background-color: darkslategray;
 }
 
+.door_list {
+    margin: 0 5px;
+}
+
+.door_ul {
+    background-color: lightgray;
+    margin-bottom: 10px;
+}
+
+.door_heading {
+    margin: 5px;
+}
+
 dl {
     border: 3px solid darkblue;
     padding: 0.5em;
