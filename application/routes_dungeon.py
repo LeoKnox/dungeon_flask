@@ -78,4 +78,4 @@ def add_door():
         
         door = Door(room_name=room_name, room_wall=room_wall, wall_pos=wall_pos, door_type=door_type)
         door.save()
-    return redirect(url_for('rooms', room_name=room_name))
+    return redirect(url_for('edit_room', room_name=room_name))
