@@ -21,6 +21,37 @@
     </br>
 {% endfor %}
 </ul>
+<form name="add_door" action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ door_form.room_name.label }}
+        {{ door_form.room_name(value=single_room['room_name']) }}
+        {% for error in door_form.room_name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ door_form.wall_pos.label }}
+        {{ door_form.wall_pos(value=single_room['wall_pos']) }}
+        {% for error in door_form.wall_pos.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ door_form.room_wall.label }}
+        {{ door_form.room_wall(value=single_room['room_wall']) }}
+        {% for error in door_form.room_wall.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ door_form.door_type.label }}
+        {{ door_form.door_type(value=single_room['door_type']) }}
+        {% for error in door_form.door_type.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </p>
+</form>
 
 <div class="room">
     <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" />

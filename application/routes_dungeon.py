@@ -1,5 +1,5 @@
 from application import app, db
-from application.forms import CreateRoomForm
+from application.forms import CreateRoomForm, DoorForm
 from application.models import Room, Door
 from flask import render_template, redirect, url_for
 
@@ -27,6 +27,7 @@ def levels():
 @app.route('/edit_room/<room_name>', methods=['GET', 'POST'])
 def edit_room(room_name):
     form = CreateRoomForm()
+    door_form = DoorForm()
     single_room = Room.objects(room_name=room_name).first()
     doors = list( Room.objects.aggregate(*[
         {
@@ -51,9 +52,8 @@ def edit_room(room_name):
             "width":form.width.data
         }
         single_room.update(**room)
-        #return redirect(url_for('rooms'))
         return redirect(url_for('edit_room', room_name=room_name))
-    return render_template("edit_room.html", single_room = doors[0], form=form)
+    return render_template("edit_room.html", single_room = doors[0], form=form, door_form=door_form)
 
 @app.route('/create_room', methods=["GET", "POST"])
 def create_room():
@@ -67,3 +67,14 @@ def create_room():
         room.save()
     return redirect(url_for('rooms'))
     
+@app.route('/add_room', methods=["GET", "POST"])
+def add_room():
+    if form.validate_on_submit():
+        room_name   =   form.room_name.data
+        room_wall   =   form.room_wall.data
+        wall_pos    =   form.wall_pos.data
+        door_type   =   form.door_type.data
+        
+        door = Door(room_name=room_name, room_wall=room_wall, wall_pos=wall_pos, door_type=door_type)
+        door.save()
+    return redirect(url_for('edit_room', room_name=room_name))

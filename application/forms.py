@@ -10,8 +10,8 @@ class CreateRoomForm(FlaskForm):
     submit      =   SubmitField("Submit Room")
 
 class DoorForm(FlaskForm):
-    room_name   =   StringField("Room Name")
-    room_wall   =   IntegerField("Wall")
+    room_name   =   StringField("Location Room")
+    room_wall   =   IntegerField("Room Wall")
     wall_pos    =   IntegerField("Wall Position")
     door_type   =   StringField("Door Type")
     submit      =   SubmitField("Submit Door")
