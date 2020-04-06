@@ -67,8 +67,8 @@ def create_room():
         room.save()
     return redirect(url_for('rooms'))
     
-@app.route('/add_room', methods=["GET", "POST"])
-def add_room():
+@app.route('/add_door', methods=["GET", "POST"])
+def add_door():
     if form.validate_on_submit():
         room_name   =   form.room_name.data
         room_wall   =   form.room_wall.data
