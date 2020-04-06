@@ -25,10 +25,14 @@
 <div class="room">
     <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
 -->{% for j in range(0, single_room["width"]) -%}<!--
-    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+    -->{% if j == 3 %}<!--
+        --><img class="floor_table" src="{{url_for('static', filename='images/floor.jpg') }}" /><!--
+    -->{% else %}<!--
+        --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+     -->{% endif %}<!--
 -->{% endfor %}<!--
-    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" />
-{% for i in range(0, single_room["length"]) %}
+    --><img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
+-->{% for i in range(0, single_room["length"]) %}
     <div class="row">
     <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" /><!--
     -->{% for j in range(0, single_room["width"]) -%}<!--
