@@ -14,4 +14,4 @@ class DoorForm(FlaskForm):
     room_wall   =   IntegerField("Room Wall")
     wall_pos    =   IntegerField("Wall Position")
     door_type   =   StringField("Door Type")
-    submit      =   SubmitField("Submit Door")
+    door_submit =   SubmitField("Submit Door")
