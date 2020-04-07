@@ -55,12 +55,12 @@
         {{ door_form.door_submit() }}
     </p>
 </form>
-
+<p>{{ single_room['r1'][0]['door_type'] }} ----</p>
 <div class="room">
     <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" />
 {%- for j in range(0, single_room["width"]) -%}
     {%- if j == 2 -%}
-        <img class="floor_table" src="{{url_for('static', filename='images/floor.jpg') }}" />
+        <img class="floor_table" src="{{url_for('static', filename='images/') }}{{ single_room['r1'][0]['door_type'] }}.jpg" />
     {%- else -%}
         <img class="floor_table" src="{{url_for('static', filename='images/wall.jpg') }}" />
     {%- endif -%}

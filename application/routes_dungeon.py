@@ -70,7 +70,9 @@ def create_room():
 @app.route('/add_door', methods=["POST"])
 def add_door():
     form = DoorForm()
+    doors = Door.objects.all()
     if form.validate_on_submit():
+        print("&********************** weeee")
         room_name   =   form.room_name.data
         room_wall   =   form.room_wall.data
         wall_pos    =   form.wall_pos.data
@@ -78,4 +80,5 @@ def add_door():
         
         door = Door(room_name=room_name, room_wall=room_wall, wall_pos=wall_pos, door_type=door_type)
         door.save()
+    print(doors[0].room_name)
     return redirect(url_for('edit_room', room_name=room_name))
